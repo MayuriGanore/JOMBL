@@ -1,2 +1,0 @@
-# JOMBL
-nestjs and mongodb
