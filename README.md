@@ -79,10 +79,7 @@ To run App, run the following command
 
 1) REST API endpoints: http://localhost:8000.
 
-2) WebSocket endpoint: 
- http://localhost:8000.
-
-http://localhost:8001.
+2) WebSocket endpoint: http://localhost:3000. http://localhost:3000?token=<JWT_TOKEN>.
    
 ## Test Cases
 
@@ -95,11 +92,11 @@ http://localhost:8001.
    provide email and password in body/raw section
 
 3) Authenticate URl:
-   http://localhost:3000/users/Authenticate
+   http://localhost:3000/users/authenticate?token=<JWT_TOKEN>
    provide email,password and token 
 
 4) Chatting URL:
-   Create two socket.io requests on Postman. URL: ws://localhost:3000 add token (ws://localhost:3000?token=<JWT_TOKEN>)
+   Create two socket.io requests on Postman. URL: http://localhost:3000 add token (http://localhost:3000?token=<JWT_TOKEN>)
 add onMessage event on both requests also add newMessage event in message section.
 
    
