@@ -5,9 +5,9 @@ import {Model} from "mongoose";
 import * as bcrypt from "bcrypt";
 import * as jwt from 'jsonwebtoken';
 import {User,UserDocument} from "./schemas/user.schemas";
-
 @Injectable()
 export class UsersService {
+    private readonly JWT_SECRET = 'MayuriGanore@24//';
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     constructor(
         @InjectModel(User.name)
@@ -38,5 +38,13 @@ export class UsersService {
         }
         const token=jwt.sign({email:user.email},'MayuriGanore@24//',{expiresIn:"1h"});
         return token;
+    }
+    validateToken(token: string): boolean {
+        try {
+            jwt.verify(token, this.JWT_SECRET);
+            return true;
+        } catch (error) {
+            return false;
+        }
     }
 }

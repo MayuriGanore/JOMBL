@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ChatModule } from './chat/chat.module';
 
 
 @Module({
@@ -11,6 +12,7 @@ import { MongooseModule } from '@nestjs/mongoose';
   [ 
     MongooseModule.forRoot("mongodb+srv://Mayuri:12345@chatapp.ftkxe9e.mongodb.net/?retryWrites=true&w=majority&appName=ChatApp"),
     UsersModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
